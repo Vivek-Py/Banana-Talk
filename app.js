@@ -15,8 +15,8 @@ function errorHandler(){
 
 btnTranslate.addEventListener("click", function event(){
     var inputText = inputTxt.value
-    fetch(fetchUrl(inputText))
-        .then(response => response.json())
+    fetch(fetchUrl(inputText)) 
+        .then(function resFunc(response) {return response.json()})
         .then(json => {
             var translatedText = json.contents.translated
             outputDiv.innerText = translatedText
